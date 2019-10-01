@@ -66,9 +66,9 @@ class RegistrationMultistepForm extends FormBase {
         '#limit_validation_errors' => $limit_validation_errors,
         '#submit' => ['::prevSubmit'],
         '#ajax' => [
-          'wrapper' => 'ajax-example-wizard-wrapper',
+          'wrapper' => 'ajax-multistepform-wizard-wrapper',
           'callback' => [$this, 'loadStep'],
-          'effect' => 'fade',
+          'effect' => 'slide',
         ],
       ];
     }
@@ -79,9 +79,9 @@ class RegistrationMultistepForm extends FormBase {
         '#value' => $this->t('Complete your location information'),
         '#submit' => ['::nextSubmit'],
         '#ajax' => [
-          'wrapper' => 'ajax-example-wizard-wrapper',
+          'wrapper' => 'ajax-multistepform-wizard-wrapper',
           'callback' => [$this, 'loadStep'],
-          'effect' => 'fade',
+          'effect' => 'slide',
         ],
       ];
     }
@@ -93,7 +93,7 @@ class RegistrationMultistepForm extends FormBase {
       ];
     }
 
-    $form['#prefix'] = '<div id="ajax-example-wizard-wrapper">';
+    $form['#prefix'] = '<div id="ajax-multistepform-wizard-wrapper">';
     $form['#suffix'] = '</div>';
 
     return $form;
@@ -118,7 +118,7 @@ class RegistrationMultistepForm extends FormBase {
     $this->messenger()->deleteAll();
 
     // Update Form.
-    $response->addCommand(new HtmlCommand('#ajax-example-wizard-wrapper', $form));
+    $response->addCommand(new HtmlCommand('#ajax-multistepform-wizard-wrapper', $form));
 
     if (!empty($messages)) {
       // Form did not validate, get messages and render them.
