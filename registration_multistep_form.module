@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Contains registration_multistep_form.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function registration_multistep_form_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the registration_multistep_form module.
+    case 'help.page.registration_multistep_form':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module splits the registration form into multiple forms.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

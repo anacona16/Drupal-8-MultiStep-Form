@@ -1,0 +1,7 @@
+name: 'Registration Multistep Form'
+type: module
+description: 'This module exposes a form with multiple steps.'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - user
