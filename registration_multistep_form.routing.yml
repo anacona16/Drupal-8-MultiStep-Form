@@ -1,0 +1,7 @@
+registration_multistep_form.multistep_form:
+  path: '/registration/multistep-form'
+  defaults:
+    _form: '\Drupal\registration_multistep_form\Form\RegistrationMultistepForm'
+    _title: 'Registration Multistep Form'
+  requirements:
+    _permission: 'access content'
